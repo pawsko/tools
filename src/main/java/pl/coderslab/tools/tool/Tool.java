@@ -21,5 +21,5 @@ public class Tool {
     private String powerType; //if applicable 230, battery
     private String status; //Available, not available, damaged, in service
     private int rating; //included accuracy, rate of wear and tear
-
+    private String storageLocation;
 }
