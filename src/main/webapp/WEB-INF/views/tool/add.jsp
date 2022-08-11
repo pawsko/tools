@@ -17,13 +17,23 @@
     <form:hidden path="id"/> <br>
     Name: <form:input path="name"/> <br>
     Model: <form:input path="model"/> <br>
-    Manufacturer: <form:input path="manufacturer"/> <br>
+
+    Manufacturer:
+    <form:select path="manufacturer.id">
+        <form:option value="NONE" label="--- Select ---"/>
+        <form:options items="${manufacturers}" itemLabel="nameOfManufacturer" itemValue="id"/>
+    </form:select> <br>
+
     Category: <form:input path="category"/> <br>
     Type: <form:input path="type"/> <br>
     Power type: <form:input path="powerType"/> <br>
     Status: <form:input path="status"/> <br>
     Rating: <form:input path="rating"/> <br>
-    Storage location: <form:input path="storageLocation"/> <br>
+    Storage location:
+    <form:select path="location.id">
+        <form:option value="NONE" label="--- Select ---"/>
+        <form:options items="${locations}" itemLabel="nameOfLocations" itemValue="id"/>
+    </form:select> <br>
     <input type="submit"/>
 </form:form>
 </body>

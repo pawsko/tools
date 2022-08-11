@@ -2,6 +2,8 @@ package pl.coderslab.tools.tool;
 
 import lombok.Getter;
 import lombok.Setter;
+import pl.coderslab.tools.location.Location;
+import pl.coderslab.tools.manufacturer.Manufacturer;
 
 import javax.persistence.*;
 
@@ -15,11 +17,13 @@ public class Tool {
     private Long id;
     private String name;
     private String model;
-    private String manufacturer;
+    @ManyToOne
+    private Manufacturer manufacturer;
     private String category;
     private String type;  //electro, handy
     private String powerType; //if applicable 230, battery
     private String status; //Available, not available, damaged, in service
     private int rating; //included accuracy, rate of wear and tear
-    private String storageLocation;
+    @ManyToOne
+    private Location location;
 }

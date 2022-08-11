@@ -15,8 +15,8 @@
 <%--@elvariable id="rental" type="pl.coderslab.tools.rental.Rental"--%>
 <form:form modelAttribute="rental">
     <form:hidden path="id"/> <br>
-    Tool: <form:select path="tool" items="${tools}" itemLabel="name" itemValue="id"/> <br>
-    User: <form:select path="user" items="${users}" itemLabel="lastName" itemValue="id"/> <br>
+    Tool: <form:select path="tool.id" items="${tools}" itemLabel="name" itemValue="id"/> <br>
+    User: <form:select path="user.id" items="${users}" itemLabel="lastName" itemValue="id"/> <br>
 
 <%--    Rented: <form:input path="rented"/> <br>--%>
 <%--    Returned: <form:input path="returned"/> <br>--%>

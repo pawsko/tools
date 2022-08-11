@@ -6,14 +6,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import pl.coderslab.tools.location.LocationDao;
+import pl.coderslab.tools.manufacturer.ManufacturerDao;
 
 @Controller
 @RequestMapping("/tool")
 public class ToolController {
     private final ToolDao toolDao;
+    private final ManufacturerDao manufacturerDao;
+    private final LocationDao locationDao;
 
-    public ToolController(ToolDao toolDao) {
+    public ToolController(ToolDao toolDao, ManufacturerDao manufacturerDao, LocationDao locationDao) {
         this.toolDao = toolDao;
+        this.manufacturerDao = manufacturerDao;
+        this.locationDao = locationDao;
     }
 
     @GetMapping("/list")
@@ -24,6 +30,8 @@ public class ToolController {
 
     @GetMapping("/add")
     public String addTool(Model model) {
+        model.addAttribute("locations", locationDao.findAll());
+        model.addAttribute("manufacturers", manufacturerDao.findAll());
         model.addAttribute("tool", new Tool());
         return "tool/add";
     }
@@ -36,6 +44,8 @@ public class ToolController {
 
     @GetMapping("/edit/{id}")
     public String editTool(@PathVariable Long id, Model model) {
+        model.addAttribute("locations", locationDao.findAll());
+        model.addAttribute("manufacturers", manufacturerDao.findAll());
         model.addAttribute("tool", toolDao.read(id));
         return "tool/edit";
     }

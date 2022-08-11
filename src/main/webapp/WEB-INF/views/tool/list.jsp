@@ -33,13 +33,13 @@
             <td>${tool.id}</td>
             <td>${tool.name}</td>
             <td>${tool.model}</td>
-            <td>${tool.manufacturer}</td>
+            <td>${tool.manufacturer.nameOfManufacturer}</td>
             <td>${tool.category}</td>
             <td>${tool.type}</td>
             <td>${tool.powerType}</td>
             <td>${tool.status}</td>
             <td>${tool.rating}</td>
-            <td>${tool.storageLocation}</td>
+            <td>${tool.location.nameOfLocations}</td>
             <td>
                 <a href="<c:url value="/tool/edit/${tool.id}"/>">Edit</a>
             </td>
