@@ -26,6 +26,8 @@
         <th>Status</th>
         <th>Rating</th>
         <th>Storage location</th>
+        <th>Created on</th>
+        <th>Last update on</th>
         <th>Actions</th>
     </tr>
     <c:forEach items="${tools}" var="tool">
@@ -40,6 +42,8 @@
             <td>${tool.status}</td>
             <td>${tool.rating}</td>
             <td>${tool.location.nameOfLocations}</td>
+            <td>${tool.created}</td>
+            <td>${tool.lastUpdate}</td>
             <td>
                 <a href="<c:url value="/tool/edit/${tool.id}"/>">Edit</a>
             </td>

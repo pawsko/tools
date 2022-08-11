@@ -22,6 +22,8 @@
         <th>Phone number</th>
         <th>Email</th>
         <th>Rating</th>
+        <th>Created on</th>
+        <th>Last update on</th>
         <th>Actions</th>
     </tr>
     <c:forEach items="${users}" var="user">
@@ -32,6 +34,8 @@
             <td>${user.phoneNumber}</td>
             <td>${user.email}</td>
             <td>${user.rating}</td>
+            <td>${user.created}</td>
+            <td>${user.lastUpdate}</td>
             <td>
                 <a href="<c:url value="/user/edit/${user.id}"/>">Edit</a>
             </td>

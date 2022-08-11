@@ -21,6 +21,8 @@
     Phone number: <form:input path="phoneNumber"/> <br>
     Email: <form:input path="email"/> <br>
     Rating: <form:input path="rating"/> <br>
+    Created on: ${user.created} <form:hidden path="created"/> <br>
+    Last update on: ${user.lastUpdate} <br>
     <input type="submit"/>
 </form:form>
 

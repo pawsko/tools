@@ -9,17 +9,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Add new client</title>
+    <title>Add status of tool</title>
 </head>
 <body>
-<%--@elvariable id="user" type="pl.coderslab.tools.user.User"--%>
-<form:form modelAttribute="user">
+<%--@elvariable id="status" type="pl.coderslab.tools.status.Status"--%>
+<form:form modelAttribute="status">
     <form:hidden path="id"/> <br>
-    First name: <form:input path="firstName"/> <br>
-    Last name: <form:input path="lastName"/> <br>
-    Phone number: <form:input path="phoneNumber"/> <br>
-    Email: <form:input path="email"/> <br>
-    Rating: <form:input path="rating"/> <br>
+    Status: <form:input path="status"/> <br>
     <input type="submit"/>
 </form:form>
 </body>

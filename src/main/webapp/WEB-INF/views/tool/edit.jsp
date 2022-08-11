@@ -25,6 +25,8 @@
     Status: <form:input path="status"/> <br>
     Rating: <form:input path="rating"/> <br>
     Storage location: <form:select path="location.id" items="${locations}" itemLabel="nameOfLocations" itemValue="id"/> <br>
+    Created on: ${tool.created} <form:hidden path="created"/> <br>
+    Last update on: ${tool.lastUpdate} <br>
     <input type="submit"/>
 </form:form>
 

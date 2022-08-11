@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Location of particular tool</title>
+    <title>Add location</title>
 </head>
 <body>
 <%--@elvariable id="location" type="pl.coderslab.tools.location.Location"--%>
