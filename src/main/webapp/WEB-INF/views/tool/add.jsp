@@ -24,10 +24,23 @@
         <form:options items="${manufacturers}" itemLabel="nameOfManufacturer" itemValue="id"/>
     </form:select> <br>
 
-    Category: <form:input path="category"/> <br>
-    Type: <form:input path="type"/> <br>
-    Power type: <form:input path="powerType"/> <br>
-    Status: <form:input path="status"/> <br>
+    Category:
+    <form:select path="category.id">
+        <form:option value="NONE" label="--- Select ---"/>
+        <form:options items="${categories}" itemLabel="categoryName" itemValue="id"/>
+    </form:select> <br>
+
+    Power type:
+    <form:select path="powerType.id">
+        <form:option value="NONE" label="--- Select ---"/>
+        <form:options items="${powertype}" itemLabel="powerType" itemValue="id"/>
+    </form:select> <br>
+
+    Status:
+    <form:select path="status.id">
+        <form:option value="NONE" label="--- Select ---"/>
+        <form:options items="${status}" itemLabel="status" itemValue="id"/>
+    </form:select> <br>
     Rating: <form:input path="rating"/> <br>
     Storage location:
     <form:select path="location.id">

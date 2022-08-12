@@ -21,7 +21,6 @@
         <th>Model</th>
         <th>Manufacturer</th>
         <th>Category</th>
-        <th>Type</th>
         <th>Power type</th>
         <th>Status</th>
         <th>Rating</th>
@@ -36,10 +35,9 @@
             <td>${tool.name}</td>
             <td>${tool.model}</td>
             <td>${tool.manufacturer.nameOfManufacturer}</td>
-            <td>${tool.category}</td>
-            <td>${tool.type}</td>
-            <td>${tool.powerType}</td>
-            <td>${tool.status}</td>
+            <td>${tool.category.categoryName}</td>
+            <td>${tool.powerType.powerType}</td>
+            <td>${tool.status.status}</td>
             <td>${tool.rating}</td>
             <td>${tool.location.nameOfLocations}</td>
             <td>${tool.created}</td>

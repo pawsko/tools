@@ -1,4 +1,4 @@
-package pl.coderslab.tools.typesoftools;
+package pl.coderslab.tools.category;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -6,13 +6,13 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "typesOfTools")
+@Table(name = "categories")
 @Getter
 @Setter
-public class TypesOfTools {
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String typeOfTool;
+    private String categoryName;
 
 }

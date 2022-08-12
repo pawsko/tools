@@ -7,7 +7,7 @@ import pl.coderslab.tools.location.Location;
 import pl.coderslab.tools.manufacturer.Manufacturer;
 import pl.coderslab.tools.powertype.PowerType;
 import pl.coderslab.tools.status.Status;
-import pl.coderslab.tools.typesoftools.TypesOfTools;
+import pl.coderslab.tools.category.Category;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -25,9 +25,8 @@ public class Tool {
     private String model;
     @ManyToOne
     private Manufacturer manufacturer;
-    private String category;
     @ManyToOne
-    private TypesOfTools typesOfTools;    //Hand tools, Power tools, Petrol tools, Measuring tools
+    private Category category;    //Hand tools, Power tools, Petrol tools, Measuring tools
     @ManyToOne
     private PowerType powerType; //if applicable 230, battery, gasoline for 4T, gasoline + oilmix for 2T handy
     @ManyToOne

@@ -9,14 +9,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Edit type of tool</title>
+    <title>Edit category</title>
 </head>
 <body>
 
-<%--@elvariable id="typeoftool" type="pl.coderslab.tools.typesoftools.TypesOfTools"--%>
-<form:form modelAttribute="typeoftool" action="/typeoftool/edit">
+<%--@elvariable id="category" type="pl.coderslab.tools.category.Category"--%>
+<form:form modelAttribute="category" action="/category/edit">
     <form:hidden path="id"/> <br>
-    Type of tool: <form:input path="typeOfTool"/> <br>
+    Category: <form:input path="categoryName"/> <br>
     <input type="submit"/>
 </form:form>
 

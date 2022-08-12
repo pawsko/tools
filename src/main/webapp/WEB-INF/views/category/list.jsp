@@ -9,23 +9,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Types of tools</title>
+    <title>Categories</title>
 </head>
 <body>
-<%--@elvariable id="typeoftool" type="pl.coderslab.tools.typesoftools.TypesOfTools"--%>
-<a href="<c:url value="/typeoftool/add/"/>">Add new type of tool</a>
+<%--@elvariable id="category" type="pl.coderslab.tools.category.Category"--%>
+<a href="<c:url value="/category/add/"/>">Add new category</a>
 <table>
     <tr>
         <th>Id</th>
-        <th>Type of tool</th>
+        <th>Category</th>
         <th>Actions</th>
     </tr>
-    <c:forEach items="${typesoftools}" var="typeoftool">
+    <c:forEach items="${categories}" var="category">
         <tr>
-            <td>${typeoftool.id}</td>
-            <td>${typeoftool.typeOfTool}</td>
+            <td>${category.id}</td>
+            <td>${category.categoryName}</td>
             <td>
-                <a href="<c:url value="/typeoftool/edit/${typeoftool.id}"/>">Edit</a>
+                <a href="<c:url value="/category/edit/${category.id}"/>">Edit</a>
             </td>
         </tr>
     </c:forEach>

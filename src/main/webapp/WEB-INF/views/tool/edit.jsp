@@ -13,16 +13,15 @@
 </head>
 <body>
 
-<%--@elvariable id="author" type="pl.coderslab.tools.tool.Tool"--%>
+<%--@elvariable id="tool" type="pl.coderslab.tools.tool.Tool"--%>
 <form:form modelAttribute="tool" action="/tool/edit">
     <form:hidden path="id"/> <br>
     Name: <form:input path="name"/> <br>
     Model: <form:input path="model"/> <br>
     Manufacturer: <form:select path="manufacturer.id" items="${manufacturers}" itemLabel="nameOfManufacturer" itemValue="id"/> <br>
-    Category: <form:input path="category"/> <br>
-    Type: <form:input path="type"/> <br>
-    Power type: <form:input path="powerType"/> <br>
-    Status: <form:input path="status"/> <br>
+    Category: <form:select path="category.id" items="${categories}" itemLabel="categoryName" itemValue="id"/> <br>
+    Power type: <form:select path="powerType.id" items="${powertype}" itemLabel="powerType" itemValue="id"/> <br>
+    Status: <form:select path="status.id" items="${status}" itemLabel="status" itemValue="id"/> <br>
     Rating: <form:input path="rating"/> <br>
     Storage location: <form:select path="location.id" items="${locations}" itemLabel="nameOfLocations" itemValue="id"/> <br>
     Created on: ${tool.created} <form:hidden path="created"/> <br>
