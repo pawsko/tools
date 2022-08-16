@@ -1,13 +1,13 @@
 package pl.coderslab.tools.rental;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-import pl.coderslab.tools.status.Status;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.tools.status.StatusDao;
-import pl.coderslab.tools.tool.Tool;
 import pl.coderslab.tools.tool.ToolDao;
 import pl.coderslab.tools.user.User;
 import pl.coderslab.tools.user.UserDao;
@@ -31,6 +31,7 @@ public class RentalController {
     @GetMapping("/list")
     public String list(Model model) {
         model.addAttribute("rentals", rentalDao.findAll());
+        log.info("model rentals: {}", model.toString());
         model.addAttribute("tools", toolDao.findAll());
         return "rental/list";
     }
@@ -80,7 +81,7 @@ public class RentalController {
         rentalDao.create(rental);
         log.info("New rent created: {}", rental);
 
-        return "redirect:/tool/list";
+        return "redirect:/rental/list";
     }
 
     @GetMapping("/return/{id}")
@@ -103,7 +104,7 @@ public class RentalController {
         log.info("New rent created: {}", rental);
 
         rentalDao.update(rental);
-        return "redirect:/tool/list";
+        return "redirect:/rental/list";
     }
 
 

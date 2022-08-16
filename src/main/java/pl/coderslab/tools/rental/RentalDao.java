@@ -18,7 +18,7 @@ public class RentalDao {
     @PersistenceContext
     EntityManager entityManager;
 
-    public List<Tool> findAll() {
+    public List<Rental> findAll() {
         return entityManager
                 .createQuery("select r from Rental r")
                 .getResultList();
@@ -38,10 +38,17 @@ public class RentalDao {
 
     public Rental readRentalByToolId(Long toolId) {
         log.info("log from change Status");
-        Query queryp = entityManager.createQuery("SELECT r FROM Rental r WHERE (r.tool.id = :toolId AND r.returned IS NULL)");
+        Query queryp = entityManager
+                .createQuery("SELECT r FROM Rental r WHERE (r.tool.id = :toolId AND r.returned IS NULL)");
         queryp.setParameter("toolId", toolId);
-       return (Rental) queryp.getSingleResult();
+        return (Rental) queryp.getSingleResult();
     }
 
+    public List<Rental> findAllRentedByUser(Long userId) {
+        Query queryp = entityManager
+                .createQuery("select r from Rental r WHERE r.user.id = :userId");
+        queryp.setParameter("userId", userId);
+                return queryp.getResultList();
+    }
 
 }
