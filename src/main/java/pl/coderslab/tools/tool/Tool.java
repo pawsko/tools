@@ -1,21 +1,21 @@
 package pl.coderslab.tools.tool;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
+import pl.coderslab.tools.category.Category;
 import pl.coderslab.tools.location.Location;
 import pl.coderslab.tools.manufacturer.Manufacturer;
 import pl.coderslab.tools.powertype.PowerType;
 import pl.coderslab.tools.status.Status;
-import pl.coderslab.tools.category.Category;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
 @Entity
-@Getter
-@Setter
+//@Getter
+//@Setter
+@Data
 @Table(name = "tools")
 public class Tool {
     @Id

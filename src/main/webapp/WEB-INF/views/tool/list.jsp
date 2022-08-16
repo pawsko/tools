@@ -13,7 +13,13 @@
 </head>
 <body>
 <%--@elvariable id="tool" type="pl.coderslab.tools.tool.Tool"--%>
-<a href="<c:url value="/tool/add/"/>">Add new tool</a>
+<a href="<c:url value="/status/list/"/>">Status list</a>
+<a href="<c:url value="/powertype/list/"/>">Power type list</a>
+<a href="<c:url value="/category/list/"/>">Category list</a>
+<a href="<c:url value="/manufacturer/list/"/>">Manufacturer list</a>
+<a href="<c:url value="/location/list/"/>">Location list</a> <br>
+
+<a href="<c:url value="/tool/add/"/>">Add new tool</a><br>
 <table>
     <tr>
         <th>Id</th>
@@ -44,6 +50,14 @@
             <td>${tool.lastUpdate}</td>
             <td>
                 <a href="<c:url value="/tool/edit/${tool.id}"/>">Edit</a>
+                <c:if test="${tool.status.status == 'available'}">
+                    <a href="<c:url value="/rental/rent/${tool.id}"/>">Rent</a>
+                </c:if>
+                <c:if test="${tool.status.status == 'rental'}">
+                    <a href="<c:url value="/rental/return/${tool.id}"/>">Return</a>
+                </c:if>
+
+
             </td>
         </tr>
     </c:forEach>

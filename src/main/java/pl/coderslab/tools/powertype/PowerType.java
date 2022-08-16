@@ -1,5 +1,6 @@
 package pl.coderslab.tools.powertype;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,8 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "powerTypes")
-@Getter
-@Setter
+@Data
 public class PowerType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

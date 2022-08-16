@@ -34,6 +34,9 @@
             <td>${rental.notices}</td>
             <td>
                 <a href="<c:url value="/rental/edit/${rental.id}"/>">Edit</a>
+                <c:if test="${rental.tool.status.status == 'rental'}">
+                    <a href="<c:url value="/rental/return/${rental.tool.id}"/>">Return</a>
+                </c:if>
             </td>
         </tr>
     </c:forEach>

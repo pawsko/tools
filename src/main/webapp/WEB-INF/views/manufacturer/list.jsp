@@ -13,6 +13,7 @@
 </head>
 <body>
 <%--@elvariable id="manufactorer" type="pl.coderslab.tools.manufacturer.Manufacturer"--%>
+<a href="<c:url value="/tool/list/"/>">Tool list</a><br>
 <a href="<c:url value="/manufacturer/add/"/>">Add new manufacturers</a>
 <table>
     <tr>

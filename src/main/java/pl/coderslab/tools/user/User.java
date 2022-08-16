@@ -1,5 +1,6 @@
 package pl.coderslab.tools.user;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -10,8 +11,9 @@ import java.time.temporal.ChronoUnit;
 
 @Entity
 @Table(name = "users")
-@Getter
-@Setter
+//@Getter
+//@Setter
+@Data
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

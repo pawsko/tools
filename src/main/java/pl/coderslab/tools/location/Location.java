@@ -1,8 +1,11 @@
 package pl.coderslab.tools.location;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
+@Data
 @Table(name = "locations")
 public class Location {
     @Id

@@ -16,7 +16,7 @@ public class ManufacturerDao {
 
     public List<Manufacturer> findAll() {
         return entityManager
-                .createQuery("select m from Manufacturer m")
+                .createQuery("select m from Manufacturer m ORDER BY m.nameOfManufacturer")
                 .getResultList();
     }
 

@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: pawsko
-  Date: 02/08/2022
-  Time: 21:22
+  Date: 12/08/2022
+  Time: 11:15
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -14,29 +14,22 @@
 </head>
 <body>
 <%--@elvariable id="rental" type="pl.coderslab.tools.rental.Rental"--%>
-<form:form modelAttribute="rental">
-    <form:hidden path="id"/> <br>
-    Tool:
-    <form:select path="tool.id">
-        <form:option value="NONE" label="--- Select ---"/>
-        <c:forEach items="${tools}" var="tool">
-            <c:if test="${tool.status.status == 'available'}">
-            <form:option value="${tool.id}"><c:out value="${tool.id}. ${tool.name} ${tool.model} ${tool.manufacturer.nameOfManufacturer}"/></form:option>
-            </c:if>
-        </c:forEach>
-    </form:select><br>
+<%--zamienić XXXX na nazwę urządzenia--%>
+<form:form modelAttribute="rental" action="/rental/rent">
+    <%--    <form:hidden path="id"/> <br>--%>
+    <form:hidden path="tool.id" value="${tool.id}"/>
+    Rent tool: ${tool.name} ${tool.model} ${tool.manufacturer.nameOfManufacturer} (id:${tool.id})<br>
 
     User:
     <form:select path="user.id">
         <form:option value="NONE" label="--- Select ---"/>
         <c:forEach items="${users}" var="user">
             <form:option value="${user.id}"><c:out
-                    value="${user.id}. ${user.lastName} ${user.firstName}"/></form:option>
+                    value="${user.lastName} ${user.firstName} (id:${user.id})"/>
+            </form:option>
         </c:forEach>
     </form:select><br>
 
-    Rented: <form:input path="rented" type="datetime-local"/> <br>
-<%--    Returned: <form:input path="returned" type="datetime-local"/> <br>--%>
     Notices: <form:input path="notices"/> <br>
     <input type="submit"/>
 </form:form>

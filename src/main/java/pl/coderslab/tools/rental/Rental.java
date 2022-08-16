@@ -7,6 +7,7 @@ import pl.coderslab.tools.user.User;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 @Data
 @Entity
@@ -29,5 +30,15 @@ public class Rental {
 
     @ManyToOne
     private Tool tool;
+
+    @PrePersist
+    public void prePersist() {
+        rented = LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES);
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        returned = LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES);
+    }
 
 }

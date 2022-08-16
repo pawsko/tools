@@ -14,7 +14,7 @@
 <body>
 <%--@elvariable id="tool" type="pl.coderslab.tools.tool.Tool"--%>
 <form:form modelAttribute="tool">
-    <form:hidden path="id"/> <br>
+    <form:hidden path="id"/>
     Name: <form:input path="name"/> <br>
     Model: <form:input path="model"/> <br>
 
@@ -41,12 +41,12 @@
         <form:option value="NONE" label="--- Select ---"/>
         <form:options items="${status}" itemLabel="status" itemValue="id"/>
     </form:select> <br>
-    Rating: <form:input path="rating"/> <br>
     Storage location:
     <form:select path="location.id">
         <form:option value="NONE" label="--- Select ---"/>
         <form:options items="${locations}" itemLabel="nameOfLocations" itemValue="id"/>
     </form:select> <br>
+    Rating: <form:input type="number" min="0" max="10" path="rating"/> <br>
     <input type="submit"/>
 </form:form>
 </body>
