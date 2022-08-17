@@ -14,7 +14,7 @@ public class UserDao {
 
     public List<User> findAll() {
         return entityManager
-                .createQuery("select u from User u")
+                .createQuery("select u from User u ORDER BY u.lastName")
                 .getResultList();
     }
 

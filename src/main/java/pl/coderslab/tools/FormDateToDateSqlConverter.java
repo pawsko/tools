@@ -1,4 +1,4 @@
-package pl.coderslab.tools.rental;
+package pl.coderslab.tools;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.annotation.DateTimeFormat;

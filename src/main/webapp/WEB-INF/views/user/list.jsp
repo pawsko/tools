@@ -17,23 +17,28 @@
 <table>
     <tr>
         <th>Id</th>
-        <th>First name</th>
         <th>Last name</th>
+        <th>First name</th>
         <th>Phone number</th>
         <th>Email</th>
         <th>Rating</th>
+        <th>Created on</th>
+        <th>Last update on</th>
         <th>Actions</th>
     </tr>
     <c:forEach items="${users}" var="user">
         <tr>
             <td>${user.id}</td>
-            <td>${user.firstName}</td>
             <td>${user.lastName}</td>
+            <td>${user.firstName}</td>
             <td>${user.phoneNumber}</td>
             <td>${user.email}</td>
             <td>${user.rating}</td>
+            <td>${user.created}</td>
+            <td>${user.lastUpdate}</td>
             <td>
                 <a href="<c:url value="/user/edit/${user.id}"/>">Edit</a>
+                <a href="<c:url value="/user/rental/${user.id}"/>">List all rentals</a>
             </td>
         </tr>
     </c:forEach>

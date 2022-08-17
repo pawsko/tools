@@ -9,11 +9,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Tools</title>
+    <title>Rentals list</title>
 </head>
 <body>
 <%--@elvariable id="rental" type="pl.coderslab.tools.rental.Rental"--%>
-<a href="<c:url value="/rental/add/"/>">TBD</a>
+<a href="<c:url value="/rental/add/"/>">Rent new tool</a>
 <table>
     <tr>
         <th>Id</th>
@@ -27,13 +27,16 @@
     <c:forEach items="${rentals}" var="rental">
         <tr>
             <td>${rental.id}</td>
-            <td>${rental.tool.name}</td>
-            <td>${rental.user.lastName}</td>
+            <td>${rental.tool.name} ${rental.tool.model}</td>
+            <td>${rental.user.lastName} ${rental.user.firstName}</td>
             <td>${rental.rented}</td>
             <td>${rental.returned}</td>
             <td>${rental.notices}</td>
             <td>
                 <a href="<c:url value="/rental/edit/${rental.id}"/>">Edit</a>
+                <c:if test="${rental.tool.status.status == 'rental' && empty rental.returned}">
+                    <a href="<c:url value="/rental/return/${rental.tool.id}"/>">Return</a>
+                </c:if>
             </td>
         </tr>
     </c:forEach>

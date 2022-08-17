@@ -6,15 +6,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import pl.coderslab.tools.rental.RentalDao;
+import pl.coderslab.tools.tool.ToolDao;
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
 
     private final UserDao userDao;
+    private final RentalDao rentalDao;
+    private final ToolDao toolDao;
 
-    public UserController(UserDao userDao) {
+    public UserController(UserDao userDao, RentalDao rentalDao, ToolDao toolDao) {
         this.userDao = userDao;
+        this.rentalDao = rentalDao;
+        this.toolDao = toolDao;
     }
 
     @GetMapping("/list")
@@ -45,5 +51,13 @@ public class UserController {
     public String update(User user) {
         userDao.update(user);
         return "redirect:/user/list";
+    }
+
+    @GetMapping("/rental/{userId}")
+    public String listAllToolsRentedByUser(@PathVariable Long userId, Model model) {
+        model.addAttribute("user", userDao.read(userId));
+        model.addAttribute("tools", toolDao.findAll());
+        model.addAttribute("rentals", rentalDao.findAllRentedByUser(userId));
+        return "user/rental";
     }
 }

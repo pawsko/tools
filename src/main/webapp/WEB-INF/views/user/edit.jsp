@@ -18,9 +18,11 @@
     <form:hidden path="id"/>
     First name: <form:input path="firstName"/> <br>
     Last name: <form:input path="lastName"/> <br>
-    Phone number: <form:input path="phoneNumber"/> <br>
-    Email: <form:input path="email"/> <br>
-    Rating: <form:input path="rating"/> <br>
+    Phone number: <form:input type="tel" path="phoneNumber"/> <br>
+    Email: <form:input type="email" path="email"/> <br>
+    Rating: <form:input type="number" min="0" max="10" path="rating"/> <br>
+    Created on: ${user.created} <form:hidden path="created"/> <br>
+    Last update on: ${user.lastUpdate} <br>
     <input type="submit"/>
 </form:form>
 
