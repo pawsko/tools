@@ -13,6 +13,7 @@
 </head>
 <body>
 <%--@elvariable id="powertype" type="pl.coderslab.tools.powertype.PowerType"--%>
+<a href="<c:url value="/tool/list/"/>">Tool list</a><br>
 <a href="<c:url value="/powertype/add/"/>">Add new power type</a>
 <table>
     <tr>

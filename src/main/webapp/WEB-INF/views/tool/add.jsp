@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -38,6 +39,9 @@
 
     Status:
     <form:select path="status.id">
+        <c:if test="${tool.status.status == 'rental'}">
+            <a href="<c:url value="/rental/return/${tool.id}"/>" target="_blank">Return</a>
+        </c:if>
         <form:option value="NONE" label="--- Select ---"/>
         <form:options items="${status}" itemLabel="status" itemValue="id"/>
     </form:select> <br>

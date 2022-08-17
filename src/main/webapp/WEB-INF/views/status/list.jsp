@@ -13,6 +13,7 @@
 </head>
 <body>
 <%--@elvariable id="status" type="pl.coderslab.tools.status.Status"--%>
+<a href="<c:url value="/tool/list/"/>">Tool list</a><br>
 <a href="<c:url value="/status/add/"/>">Add new status</a>
 <table>
     <tr>

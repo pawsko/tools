@@ -13,6 +13,7 @@
 </head>
 <body>
 <%--@elvariable id="category" type="pl.coderslab.tools.category.Category"--%>
+<a href="<c:url value="/tool/list/"/>">Tool list</a><br>
 <a href="<c:url value="/category/add/"/>">Add new category</a>
 <table>
     <tr>

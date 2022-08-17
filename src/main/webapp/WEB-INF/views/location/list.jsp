@@ -13,6 +13,7 @@
 </head>
 <body>
 <%--@elvariable id="rental" type="pl.coderslab.tools.location.Location"--%>
+<a href="<c:url value="/tool/list/"/>">Tool list</a><br>
 <a href="<c:url value="/location/add/"/>">Add new location</a>
 <table>
     <tr>

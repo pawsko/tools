@@ -13,10 +13,8 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
 @Entity
-//@Getter
-//@Setter
-@Data
 @Table(name = "tools")
+@Data
 public class Tool {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

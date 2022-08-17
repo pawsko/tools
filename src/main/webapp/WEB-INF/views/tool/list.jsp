@@ -13,7 +13,7 @@
 </head>
 <body>
 <%--@elvariable id="tool" type="pl.coderslab.tools.tool.Tool"--%>
-<a href="<c:url value="/status/list/"/>">Status list</a>
+<a href="<c:url value="/status/list/"/>" >Status list</a>
 <a href="<c:url value="/powertype/list/"/>">Power type list</a>
 <a href="<c:url value="/category/list/"/>">Category list</a>
 <a href="<c:url value="/manufacturer/list/"/>">Manufacturer list</a>
@@ -51,10 +51,10 @@
             <td>
                 <a href="<c:url value="/tool/edit/${tool.id}"/>">Edit</a>
                 <c:if test="${tool.status.status == 'available'}">
-                    <a href="<c:url value="/rental/rent/${tool.id}"/>">Rent</a>
+                    <a href="<c:url value="/rental/rent/${tool.id}"/>" target="_blank">Rent</a>
                 </c:if>
                 <c:if test="${tool.status.status == 'rental'}">
-                    <a href="<c:url value="/rental/return/${tool.id}"/>">Return</a>
+                    <a href="<c:url value="/rental/return/${tool.id}"/>" target="_blank">Return</a>
                 </c:if>
 
 
