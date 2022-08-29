@@ -47,6 +47,8 @@ public class RentalController {
     @PostMapping("/add")
     public String save(Rental rental) {
         rentalDao.create(rental);
+        toolDao.changeStatus(rental.getTool().getId(), 2L);
+        rentalDao.create(rental);
         return "redirect:/rental/list";
     }
 

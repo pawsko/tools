@@ -26,6 +26,7 @@ public class LocationController {
 
     @GetMapping("/add")
     public String addLocation(Model model) {
+        model.addAttribute("locations", locationDao.findAll());
         model.addAttribute("location", new Location());
         return "location/add";
     }
@@ -33,7 +34,7 @@ public class LocationController {
     @PostMapping("/add")
     public String save(Location location) {
         locationDao.create(location);
-        return "redirect:/location/list";
+        return "redirect:/location/add";
     }
 
     @GetMapping("/edit/{id}")

@@ -24,6 +24,7 @@ public class CategoryController {
 
     @GetMapping("/add")
     public String add(Model model) {
+        model.addAttribute("categories", categoryDao.findAll());
         model.addAttribute("category", new Category());
         return "category/add";
     }
@@ -31,7 +32,7 @@ public class CategoryController {
     @PostMapping("/add")
     public String save(Category category) {
         categoryDao.create(category);
-        return "redirect:/category/list";
+        return "redirect:/category/add";
     }
 
     @GetMapping("/edit/{id}")

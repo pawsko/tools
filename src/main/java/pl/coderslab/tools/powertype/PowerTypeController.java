@@ -26,6 +26,7 @@ public class PowerTypeController {
 
     @GetMapping("/add")
     public String add(Model model) {
+        model.addAttribute("powetypes", powerTypeDao.findAll());
         model.addAttribute("powertype", new PowerType());
         return "powertype/add";
     }
@@ -33,7 +34,7 @@ public class PowerTypeController {
     @PostMapping("/add")
     public String save(PowerType powerType) {
         powerTypeDao.create(powerType);
-        return "redirect:/powertype/list";
+        return "redirect:/powertype/add";
     }
 
     @GetMapping("/edit/{id}")

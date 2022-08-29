@@ -45,33 +45,33 @@
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
-<table class="table table-striped table-bordered table-hover" id="dataTables-example">
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Category</th>
-        <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${categories}" var="category">
-        <tr>
-            <td>${category.id}</td>
-            <td>${category.categoryName}</td>
-            <td>
-                <a href="<c:url value="/category/edit/${category.id}"/>">Edit</a>
-            </td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
-<!-- /.table-responsive -->
-</div>
-<!-- /.panel-body -->
-</div>
-<!-- /.panel -->
-</div>
-<!-- /.col-lg-12 -->
+                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${categories}" var="category">
+                        <tr>
+                            <td>${category.id}</td>
+                            <td>${category.categoryName}</td>
+                            <td>
+                                <a href="<c:url value="/category/edit/${category.id}"/>">Edit</a>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+                <!-- /.table-responsive -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
 </div>
 <!-- jQuery -->
 <script src="/vendor/jquery/jquery.min.js"></script>

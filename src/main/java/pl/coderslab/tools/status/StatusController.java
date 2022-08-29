@@ -24,6 +24,7 @@ public class StatusController {
 
     @GetMapping("/add")
     public String add(Model model) {
+        model.addAttribute("statuses", statusDao.findAll());
         model.addAttribute("status", new Status());
         return "status/add";
     }
@@ -31,7 +32,7 @@ public class StatusController {
     @PostMapping("/add")
     public String save(Status status) {
         statusDao.create(status);
-        return "redirect:/status/list";
+        return "redirect:/status/add";
     }
 
     @GetMapping("/edit/{id}")

@@ -14,7 +14,6 @@
 </head>
 <body>
 <%--@elvariable id="rental" type="pl.coderslab.tools.rental.Rental"--%>
-<%--zamienić XXXX na nazwę urządzenia--%>
 <form:form modelAttribute="rental" action="/rental/rent">
     <%--    <form:hidden path="id"/> <br>--%>
     <form:hidden path="tool.id" value="${tool.id}"/>

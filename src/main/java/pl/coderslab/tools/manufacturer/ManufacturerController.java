@@ -25,6 +25,7 @@ public class ManufacturerController {
 
     @GetMapping("/add")
     public String add(Model model) {
+        model.addAttribute("manufacturers", manufacturerDao.findAll());
         model.addAttribute("manufacturer", new Manufacturer());
         return "manufacturer/add";
     }
@@ -32,7 +33,7 @@ public class ManufacturerController {
     @PostMapping("/add")
     public String save(Manufacturer manufacturer) {
         manufacturerDao.create(manufacturer);
-        return "redirect:/manufacturer/list";
+        return "redirect:/manufacturer/add";
     }
 
     @GetMapping("/edit/{id}")
