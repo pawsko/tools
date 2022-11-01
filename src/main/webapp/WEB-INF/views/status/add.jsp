@@ -171,7 +171,7 @@
                                 <c:forEach items="${statuses}" var="status">
                                     <tr>
                                         <td>${status.id}</td>
-                                        <td>${status.status}</td>
+                                        <td>${status.statusName}</td>
                                         <td>
                                             <a href="<c:url value="/status/edit/${status.id}"/>">Edit</a>
                                         </td>
@@ -182,12 +182,11 @@
                         </div>
 
 
-                        <%--@elvariable id="status" type="pl.coderslab.tools.status.Status"--%>
                         <!-- Form for new status -->
                         <form:form modelAttribute="status">
                             <form:hidden path="id"/> <br>
                             New status:
-                            <form:input cssClass="form-control" placeholder="Status name" path="status"/> <br>
+                            <form:input cssClass="form-control" placeholder="Status name" path="statusName"/> <br>
                             <input type="submit" class="btn btn-primary"/>
                         </form:form>
                     </div>

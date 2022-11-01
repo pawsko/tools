@@ -57,7 +57,7 @@
     <c:forEach items="${locations}" var="location">
         <tr>
             <td>${location.id}</td>
-            <td>${location.nameOfLocations}</td>
+            <td>${location.locationName}</td>
             <td>
                 <a href="<c:url value="/location/edit/${location.id}"/>">Edit</a>
             </td>

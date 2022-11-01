@@ -171,7 +171,7 @@
                                 <c:forEach items="${locations}" var="location">
                                     <tr>
                                         <td>${location.id}</td>
-                                        <td>${location.nameOfLocations}</td>
+                                        <td>${location.locationName}</td>
                                         <td>
                                             <a href="<c:url value="/location/edit/${location.id}"/>">Edit</a>
                                         </td>
@@ -184,9 +184,9 @@
                         <!-- Form for new location -->
                         <form:form modelAttribute="location">
                             <form:hidden path="id"/> <br>
-                            <%--    Location: <form:select path="" items="${location}" itemLabel="nameOfLocations" itemValue="id"/> <br>--%>
+                            <%--    Location: <form:select path="" items="${location}" itemLabel="" itemValue="id"/> <br>--%>
                             New location:
-                            <form:input cssClass="form-control" placeholder="Location name" path="nameOfLocations"/>
+                            <form:input cssClass="form-control" placeholder="Location name" path="locationName"/>
                             <br>
                             <%--    Rented: <form:input path="rented"/> <br>--%>
                             <%--    Returned: <form:input path="returned"/> <br>--%>

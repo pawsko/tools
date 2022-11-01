@@ -165,9 +165,9 @@
                             <form:select cssClass="form-control" path="tool.id">
                                 <form:option value="NONE" label="--- Select ---"/>
                                 <c:forEach items="${tools}" var="tool">
-                                    <c:if test="${tool.status.status == 'available'}">
+                                    <c:if test="${tool.status.statusName == 'available'}">
                                         <form:option value="${tool.id}">
-                                            <c:out value="${tool.id}. ${tool.name} ${tool.model} ${tool.manufacturer.nameOfManufacturer}"/>
+                                            <c:out value="${tool.id}. ${tool.name} ${tool.model} ${tool.manufacturer.manufacturerName}"/>
                                         </form:option>
                                     </c:if>
                                 </c:forEach>

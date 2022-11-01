@@ -169,7 +169,7 @@
                             Manufacturer:
                             <form:select cssClass="form-control" path="manufacturer.id">
                                 <form:option value="NONE" label="--- Select ---"/>
-                                <form:options items="${manufacturers}" itemLabel="nameOfManufacturer"
+                                <form:options items="${manufacturers}" itemLabel="manufacturerName"
                                               itemValue="id"/>
                             </form:select>
 
@@ -182,22 +182,22 @@
                             Power type:
                             <form:select cssClass="form-control" path="powerType.id">
                                 <form:option value="NONE" label="--- Select ---"/>
-                                <form:options items="${powertype}" itemLabel="powerType" itemValue="id"/>
+                                <form:options items="${powertype}" itemLabel="powerTypeName" itemValue="id"/>
                             </form:select>
 
                             Status:
                             <form:select cssClass="form-control" path="status.id">
-                                <c:if test="${tool.status.status == 'rental'}">
+                                <c:if test="${tool.status.statusName == 'rental'}">
                                     <a href="<c:url value="/rental/return/${tool.id}"/>"
                                        target="_blank">Return</a>
                                 </c:if>
                                 <form:option value="NONE" label="--- Select ---"/>
-                                <form:options items="${status}" itemLabel="status" itemValue="id"/>
+                                <form:options items="${status}" itemLabel="statusName" itemValue="id"/>
                             </form:select>
                             Storage location:
                             <form:select cssClass="form-control" path="location.id" >
                                 <form:option value="NONE" label="--- Select ---"/>
-                                <form:options items="${locations}" itemLabel="nameOfLocations" itemValue="id"/>
+                                <form:options items="${locations}" itemLabel="locationName" itemValue="id"/>
                             </form:select>
                             Rating:
                             <form:input cssClass="form-control" type="number" min="0" max="10" path="rating"/> <br>

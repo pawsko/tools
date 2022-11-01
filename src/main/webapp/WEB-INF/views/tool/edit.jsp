@@ -174,9 +174,9 @@
                                          itemValue="id"/>
                             Power type:
                             <form:select cssClass="form-control" path="powerType.id" items="${powertype}"
-                                         itemLabel="powerType" itemValue="id"/>
+                                         itemLabel="powerTypeName" itemValue="id"/>
                             Status:
-                            <form:select cssClass="form-control" path="status.id" items="${status}" itemLabel="status"
+                            <form:select cssClass="form-control" path="status.id" items="${status}" itemLabel="statusName"
                                          itemValue="id"/>
                             Rating:
                             <form:input cssClass="form-control" path="rating"/>

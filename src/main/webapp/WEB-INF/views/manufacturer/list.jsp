@@ -57,7 +57,7 @@
     <c:forEach items="${manufacturers}" var="manufacturer">
         <tr>
             <td>${manufacturer.id}</td>
-            <td>${manufacturer.nameOfManufacturer}</td>
+            <td>${manufacturer.manufacturerName}</td>
             <td>
                 <a href="<c:url value="/manufacturer/edit/${manufacturer.id}"/>">Edit</a>
             </td>

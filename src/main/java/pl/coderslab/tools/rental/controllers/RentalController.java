@@ -1,4 +1,4 @@
-package pl.coderslab.tools.rental;
+package pl.coderslab.tools.rental.controllers;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.coderslab.tools.status.StatusDao;
+import pl.coderslab.tools.rental.Rental;
+import pl.coderslab.tools.rental.RentalDao;
+import pl.coderslab.tools.status.StatusRepository;
 import pl.coderslab.tools.tool.ToolDao;
 import pl.coderslab.tools.user.User;
 import pl.coderslab.tools.user.UserDao;
@@ -19,9 +21,9 @@ public class RentalController {
     private final RentalDao rentalDao;
     private final ToolDao toolDao;
     private final UserDao userDao;
-    private final StatusDao statusDao;
+    private final StatusRepository statusDao;
 
-    public RentalController(RentalDao rentalDao, ToolDao toolDao, UserDao userDao, StatusDao statusDao) {
+    public RentalController(RentalDao rentalDao, ToolDao toolDao, UserDao userDao, StatusRepository statusDao) {
         this.rentalDao = rentalDao;
         this.toolDao = toolDao;
         this.userDao = userDao;

@@ -16,7 +16,7 @@
 <%--@elvariable id="location" type="pl.coderslab.tools.location.Location"--%>
 <form:form modelAttribute="location" action="/location/edit">
     <form:hidden path="id"/> <br>
-    Location: <form:input path="nameOfLocations"/> <br>
+    Location: <form:input path="locationName"/> <br>
     <input type="submit"/>
 </form:form>
 

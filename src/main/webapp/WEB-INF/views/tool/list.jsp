@@ -214,27 +214,27 @@
                                                 ${tool.model}
                                         </td>
                                         <td>
-                                                ${tool.manufacturer.nameOfManufacturer}
+                                                ${tool.manufacturer.manufacturerName}
                                         </td>
                                         <td>
                                                 ${tool.category.categoryName}
                                         </td>
                                         <td>
-                                                ${tool.powerType.powerType}
+                                                ${tool.powerType.powerTypeName}
                                         </td>
                                         <td class="align-middle text-center text-info">
-                                            <c:if test="${tool.status.status == 'available'}">
-                                                <span class="badge badge-success text-black-50">${tool.status.status}</span>
+                                            <c:if test="${tool.status.statusName == 'available'}">
+                                                <span class="badge badge-success text-black-50">${tool.status.statusName}</span>
                                             </c:if>
-                                            <c:if test="${tool.status.status == 'rental'}">
-                                                <span class="badge badge-danger text-black-50">${tool.status.status}</span>
+                                            <c:if test="${tool.status.statusName == 'rental'}">
+                                                <span class="badge badge-danger text-black-50">${tool.status.statusName}</span>
                                             </c:if>
                                         </td>
                                         <td class="text-center">
                                                 ${tool.rating}
                                         </td>
                                         <td>
-                                                ${tool.location.nameOfLocations}
+                                                ${tool.location.locationName}
                                         </td>
                                         <td>
                                                 ${tool.created}
@@ -244,11 +244,11 @@
                                         </td>
                                         <td>
                                             <a href="<c:url value="/tool/edit/${tool.id}"/>">Edit</a>
-                                            <c:if test="${tool.status.status == 'available'}">
+                                            <c:if test="${tool.status.statusName == 'available'}">
                                                 <a href="<c:url value="/rental/rent/${tool.id}"/>"
                                                    target="_blank">Rent</a>
                                             </c:if>
-                                            <c:if test="${tool.status.status == 'rental'}">
+                                            <c:if test="${tool.status.statusName == 'rental'}">
                                                 <a href="<c:url value="/rental/return/${tool.id}"/>"
                                                    target="_blank">Return</a>
                                             </c:if>

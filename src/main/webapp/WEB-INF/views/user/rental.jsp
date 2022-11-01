@@ -212,14 +212,14 @@
                                             ${rental.tool.model}
                                     </td>
                                     <td>
-                                            ${rental.tool.manufacturer.nameOfManufacturer}
+                                            ${rental.tool.manufacturer.manufacturerName}
                                     </td>
                                     <td class="align-middle text-center text-info">
-                                        <c:if test="${rental.tool.status.status == 'available'}">
-                                            <span class="badge badge-success text-black-50">${rental.tool.status.status}</span>
+                                        <c:if test="${rental.tool.status.statusName == 'available'}">
+                                            <span class="badge badge-success text-black-50">${rental.tool.status.statusName}</span>
                                         </c:if>
-                                        <c:if test="${rental.tool.status.status == 'rental'}">
-                                            <span class="badge badge-danger text-black-50">${rental.tool.status.status}</span>
+                                        <c:if test="${rental.tool.status.statusName == 'rental'}">
+                                            <span class="badge badge-danger text-black-50">${rental.tool.status.statusName}</span>
                                         </c:if>
                                     </td>
                                     <td>

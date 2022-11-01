@@ -168,10 +168,10 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach items="${powetypes}" var="powertype">
+                                <c:forEach items="${powertypes}" var="powertype">
                                     <tr>
                                         <td>${powertype.id}</td>
-                                        <td>${powertype.powerType}</td>
+                                        <td>${powertype.powerTypeName}</td>
                                         <td>
                                             <a href="<c:url value="/powertype/edit/${powertype.id}"/>">Edit</a>
                                         </td>
@@ -182,11 +182,10 @@
                         </div>
 
                         <!-- Form for new power types -->
-                        <%--@elvariable id="powertype" type="pl.coderslab.tools.powertype.PowerType"--%>
                         <form:form modelAttribute="powertype">
                             <form:hidden path="id"/> <br>
                             New power type:
-                            <form:input cssClass="form-control" placeholder="Power type" path="powerType"/> <br>
+                            <form:input cssClass="form-control" placeholder="Power type" path="powerTypeName"/> <br>
                             <input type="submit" class="btn btn-primary"/>
                         </form:form>
                     </div>

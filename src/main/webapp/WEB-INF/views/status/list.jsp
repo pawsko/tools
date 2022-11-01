@@ -57,7 +57,7 @@
                     <c:forEach items="${status}" var="status">
                         <tr>
                             <td>${status.id}</td>
-                            <td>${status.status}</td>
+                            <td>${status.statusName}</td>
                             <td>
                                 <a href="<c:url value="/status/edit/${status.id}"/>">Edit</a>
                             </td>

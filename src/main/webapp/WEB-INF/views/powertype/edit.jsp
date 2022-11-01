@@ -16,7 +16,7 @@
 <%--@elvariable id="powertype" type="pl.coderslab.tools.powertype.PowerType"--%>
 <form:form modelAttribute="powertype" action="/powertype/edit">
     <form:hidden path="id"/> <br>
-    Power type: <form:input path="powerType"/> <br>
+    Power type: <form:input path="powerTypeName"/> <br>
     <input type="submit"/>
 </form:form>
 

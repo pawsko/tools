@@ -171,7 +171,7 @@
                                 <c:forEach items="${manufacturers}" var="manufacturer">
                                     <tr>
                                         <td>${manufacturer.id}</td>
-                                        <td>${manufacturer.nameOfManufacturer}</td>
+                                        <td>${manufacturer.manufacturerName}</td>
                                         <td>
                                             <a href="<c:url value="/manufacturer/edit/${manufacturer.id}"/>">Edit</a>
                                         </td>
@@ -186,7 +186,7 @@
                             <form:hidden path="id"/> <br>
                             New manufacturer (first use search above):
                             <form:input cssClass="form-control" placeholder="Manufacturer name"
-                                        path="nameOfManufacturer"/> <br>
+                                        path="manufacturerName"/> <br>
                             <input type="submit" class="btn btn-primary"/>
                         </form:form>
                     </div>

@@ -1,4 +1,4 @@
-package pl.coderslab.tools.user;
+package pl.coderslab.tools.user.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,16 +8,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.tools.rental.RentalDao;
 import pl.coderslab.tools.tool.ToolDao;
+import pl.coderslab.tools.user.User;
+import pl.coderslab.tools.user.UserDao;
 
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class UserServletController {
 
     private final UserDao userDao;
     private final RentalDao rentalDao;
     private final ToolDao toolDao;
 
-    public UserController(UserDao userDao, RentalDao rentalDao, ToolDao toolDao) {
+    public UserServletController(UserDao userDao, RentalDao rentalDao, ToolDao toolDao) {
         this.userDao = userDao;
         this.rentalDao = rentalDao;
         this.toolDao = toolDao;
