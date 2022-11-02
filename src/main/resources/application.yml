@@ -1,0 +1,25 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/tools
+    username: root
+    password: coderslab
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  web:
+    locale: pl_PL
+    locale-resolver: fixed
+  security:
+    user:
+      name: user
+      password: pass
+
+#albo zamiennie
+#spring.web.locale-resolver=accept-header
+
+#spring.jpa.properties.hibernate.show_sql=true
+#spring.jpa.properties.hibernate.format_sql=true
