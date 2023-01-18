@@ -2,6 +2,7 @@ package pl.coderslab.tools.category;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -16,7 +17,7 @@ public class CategoryService {
         this.categoryDtoMapper = categoryDtoMapper;
     }
 
-    public Iterable<CategoryDto> getAllCategories() {
+    public List<CategoryDto> getAllCategories() {
         return StreamSupport.stream(categoryRepository.findAll().spliterator(), false)
                 .map(categoryDtoMapper::map)
                 .collect(Collectors.toList());

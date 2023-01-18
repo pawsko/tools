@@ -7,6 +7,7 @@ import pl.coderslab.tools.category.CategoryDto;
 import pl.coderslab.tools.category.CategoryService;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("api/category")
@@ -18,7 +19,7 @@ public class CategoryRestController {
     }
 
     @GetMapping
-    Iterable<CategoryDto> getAll() {
+    List<CategoryDto> getAll() {
         return categoryService.getAllCategories();
     }
 
