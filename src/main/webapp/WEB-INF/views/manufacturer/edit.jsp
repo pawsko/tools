@@ -16,7 +16,7 @@
 <%--@elvariable id="manufacturer" type="pl.coderslab.tools.manufacturer.Manufacturer"--%>
 <form:form modelAttribute="manufacturer" action="/manufacturer/edit">
     <form:hidden path="id"/> <br>
-    Manufacturer: <form:input path="nameOfManufacturer"/> <br>
+    Manufacturer: <form:input path="manufacturerName"/> <br>
     <input type="submit"/>
 </form:form>
 

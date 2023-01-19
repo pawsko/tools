@@ -16,7 +16,7 @@
 <%--@elvariable id="status" type="pl.coderslab.tools.status.Status"--%>
 <form:form modelAttribute="status" action="/status/edit">
     <form:hidden path="id"/> <br>
-    Status: <form:input path="status"/> <br>
+    Status: <form:input path="statusName"/> <br>
     <input type="submit"/>
 </form:form>
 

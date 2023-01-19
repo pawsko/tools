@@ -13,6 +13,8 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>tools</name>
     <description>tools</description>
+    <packaging>war</packaging>
+<!--    żeby WAR zawierał widoki jsp-->
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -70,6 +72,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <executable>true</executable>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>

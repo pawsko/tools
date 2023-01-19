@@ -14,11 +14,10 @@
 </head>
 <body>
 <%--@elvariable id="rental" type="pl.coderslab.tools.rental.Rental"--%>
-<%--zamienić XXXX na nazwę urządzenia--%>
 <form:form modelAttribute="rental" action="/rental/rent">
     <%--    <form:hidden path="id"/> <br>--%>
     <form:hidden path="tool.id" value="${tool.id}"/>
-    Rent tool: ${tool.name} ${tool.model} ${tool.manufacturer.nameOfManufacturer} (id:${tool.id})<br>
+    Rent tool: ${tool.name} ${tool.model} ${tool.manufacturer.manufacturerName} (id:${tool.id})<br>
 
     User:
     <form:select path="user.id">

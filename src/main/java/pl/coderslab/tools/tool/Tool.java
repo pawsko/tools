@@ -7,6 +7,7 @@ import pl.coderslab.tools.location.Location;
 import pl.coderslab.tools.manufacturer.Manufacturer;
 import pl.coderslab.tools.powertype.PowerType;
 import pl.coderslab.tools.status.Status;
+import pl.coderslab.tools.user.User;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -32,6 +33,8 @@ public class Tool {
     private int rating; //included accuracy, rate of wear and tear
     @ManyToOne
     private Location location;
+    @ManyToOne
+    private User user;
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime created;
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")

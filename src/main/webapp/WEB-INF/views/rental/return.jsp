@@ -19,7 +19,7 @@
     <%--    <form:hidden path="id"/> <br>--%>
     <form:hidden path="id"/>
     <form:hidden path="tool.id" value="${rental.tool.id}"/>
-    Return tool: ${tool.name} ${tool.model} ${tool.manufacturer.nameOfManufacturer} (id:${tool.id})<br>
+    Return tool: ${tool.name} ${tool.model} ${tool.manufacturer.manufacturerName} (id:${tool.id})<br>
     <form:hidden path="rented" value="${rental.rented}"/>
     Rented: ${rental.rented}<br>
     <form:hidden path="user.id" value="${rental.user.id}"/>
